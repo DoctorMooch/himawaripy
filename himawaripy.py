@@ -18,7 +18,7 @@ from itertools import product
 # =============
 
 # Increases the quality and the size. Possible values: 4, 8, 16, 20
-level = 16
+level = 4
 width = 550
 height = 550
 
