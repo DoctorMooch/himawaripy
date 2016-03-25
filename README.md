@@ -1,3 +1,5 @@
+#IMPORTANT: MODIFIED TO ONLY WORK WITH I3 AND FEH
+
 # himawaripy
 *Put near-realtime picture of Earth as your desktop background*
 

@@ -18,7 +18,7 @@ from itertools import product
 # =============
 
 # Increases the quality and the size. Possible values: 4, 8, 16, 20
-level = 4
+level = 16
 width = 550
 height = 550
 
@@ -69,7 +69,8 @@ def main():
     makedirs(split(output_file)[0], exist_ok=True)
     png.save(output_file, "PNG")
 
-    de = get_desktop_environment()
+    #de = get_desktop_environment()
+    de = "i3"
     if de in ["gnome", "unity", "cinnamon", "pantheon", "gnome-classic"]:
         # Because of a bug and stupid design of gsettings, see http://askubuntu.com/a/418521/388226
         if de == "unity":
@@ -82,6 +83,9 @@ def main():
         call(["xfconf-query", "--channel", "xfce4-desktop", "--property", "/backdrop/screen0/monitor0/image-path", "--set", output_file])
     elif de == "lxde":
         call(["display", "-window", "root", output_file])
+    elif de == "i3":
+        call(["feh", "--bg-scale", output_file])
+
     else:
         exit("Your desktop environment '{}' is not supported.".format(de))
 
